@@ -1,7 +1,6 @@
 package com.udemy.application;
 
 import com.udemy.boardgame.Board;
-import com.udemy.boardgame.Position;
 import com.udemy.chess.ChessMatch;
 
 public class Program {
