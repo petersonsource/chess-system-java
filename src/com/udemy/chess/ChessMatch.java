@@ -1,6 +1,8 @@
 package com.udemy.chess;
 
 import com.udemy.boardgame.Board;
+import com.udemy.boardgame.Position;
+import com.udemy.chess.pieces.Rook;
 
 public class ChessMatch {
 	
@@ -8,6 +10,7 @@ public class ChessMatch {
 	
 	public ChessMatch() {
 		board = new Board(8, 8);
+		initialSetup();
 	}
 	
 	public ChessPiece[][] getPieces(){
@@ -19,6 +22,10 @@ public class ChessMatch {
 			
 		}
 		return mat;
+	}
+	
+	private void initialSetup() {
+		board.placePeace(new Rook(board, Color.WRITE), new Position(2, 1));
 	}
 	
 }
