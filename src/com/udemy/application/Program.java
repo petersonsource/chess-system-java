@@ -1,20 +1,33 @@
 package com.udemy.application;
 
+import java.util.Scanner;
+
 import com.udemy.boardgame.Board;
 import com.udemy.chess.ChessMatch;
+import com.udemy.chess.ChessPiece;
+import com.udemy.chess.ChessPosition;
 
 public class Program {
 
 	public static void main(String[] args) {
 		
-		Board board = new Board(8, 8);
-		
+		Scanner sc = new Scanner(System.in);
 		ChessMatch chessMatch = new ChessMatch();
-		UI.printBoard(chessMatch.getPieces());
 		
+		while(true) {
+			UI.printBoard(chessMatch.getPieces());
+			System.out.println();
+			System.out.print("Source: ");
+			ChessPosition source = UI.readChessPosition(sc);
+			
+			System.out.println();
+			System.out.print("Target: ");
+			ChessPosition target = UI.readChessPosition(sc);
+			
+			ChessPiece capturedPiece = chessMatch.performChessMove(source, target);
+			
+		}
 		
-//		Position  position = new Position(1, 2);
-//		System.out.println(position);
 
 	}
 
